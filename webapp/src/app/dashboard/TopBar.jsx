@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import FaIcon from '../components/FaIcon'
 
 import UserBar from '../user/UserBar'
+import DashboardMenu from './DashboardMenu'
 
 const PropTypes = React.PropTypes
 
@@ -20,12 +21,10 @@ export default class TopBar extends React.Component {
             </h1>
           </li>
         </ul>
-
         <section className="top-bar-section">
+          <DashboardMenu/>
           <ul className="right">
-            <li>
-              <UserBar/>
-            </li>
+            <UserBar/>
           </ul>
         </section>
       </div>
