@@ -54,6 +54,7 @@ urlpatterns = patterns('',
     (r'^api/', include(v1_api.urls)),
 
     ## HOME PAGE
+    url(r'^polio/', login_required(TemplateView.as_view(template_name="polio.html")), name='app'),
     url(r'^$', login_required(TemplateView.as_view(template_name="index.html")), name='index'),
 
     ## BASE DATPOINT FUNCTINOALITY ( see datapoints/urls )

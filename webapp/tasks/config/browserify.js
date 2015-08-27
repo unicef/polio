@@ -24,6 +24,14 @@ export default {
       }
     },
     {
+      'entry': `${gulp.config('base.src')}/app.jsx`,
+      'dest': jsDestFolder,
+      'options': {
+        'debug': true,
+        'external': _.keys(vendorBrowser)
+      }
+    },
+    {
       'entry': `${gulp.config('base.src')}/index.js`,
       'dest': jsDestFolder,
       'options': {
