@@ -1,5 +1,5 @@
 export default  {
   sm: 'small',
-  md: 'large',
-  lg: 'medium'
+  md: 'medium',
+  lg: 'large'
 }

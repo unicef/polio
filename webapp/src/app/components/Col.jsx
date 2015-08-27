@@ -26,8 +26,9 @@ class Col extends React.Component {
 
     smCentered: PropTypes.bool,
     mdCentered: PropTypes.bool,
-    lgCentered: PropTypes.bool
+    lgCentered: PropTypes.bool,
 
+    end: PropTypes.bool
   }
 
   render() {
@@ -36,44 +37,48 @@ class Col extends React.Component {
     let classes = {};
 
     Object.keys(sizeClassMap).forEach((key)=> {
-      let size = key;
-      let prop = size;
-      let classPart = sizeClassMap[size] + '-';
+      let size = sizeClassMap[key];
+
+      let prop = key;
+      let classPart = size + '-';
 
       if (props[prop]) {
         classes[classPart + props[prop]] = true;
       }
 
-      prop = size + 'Offset';
+      prop = key + 'Offset';
       classPart = size + '-offset-';
       if (props[prop] >= 0) {
         classes[classPart + props[prop]] = true;
       }
 
-      prop = size + 'Push';
+      prop = key + 'Push';
       classPart = size + '-push-';
       if (props[prop] >= 0) {
         classes[classPart + props[prop]] = true;
       }
 
-      prop = size + 'Pull';
+      prop = key + 'Pull';
       classPart = size + '-pull-';
       if (props[prop] >= 0) {
         classes[classPart + props[prop]] = true;
       }
 
-      prop = size + 'Centered';
+      prop = key + 'Centered';
 
       if (props[prop] !== undefined) {
-        classPart = size + props[prop] ? '-centered' : '-uncentered';
+        classPart = size + (props[prop] ? '-centered' : '-uncentered');
         classes[classPart] = true;
       }
 
     });
 
+    classes.columns = true;
+    classes.end = !!props.end;
+
     return (
       <div {...props}
-        className={classNames('columns', props.className, classes)}>
+        className={classNames(props.className, classes)}>
         {props.children}
       </div>
     );

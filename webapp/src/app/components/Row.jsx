@@ -24,7 +24,7 @@ class Row extends React.Component {
       let prop = size + 'Collapse';
 
       if (props[prop] !== undefined) {
-        classes[size + props[prop] ? '-collapse' : '-uncollapse'] = true;
+        classes[sizeClassMap[size] + (!!props[prop] ? '-collapse' : '-uncollapse')] = true;
       }
     });
 
