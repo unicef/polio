@@ -20,7 +20,7 @@ const DashboardMenu = React.createClass({
 
     const state = this.state
 
-    let dataMenuList = _(state.dashboardList)
+    let menuList = _(state.dashboardList)
       .map((dashboardItem)=> {
         return {
           label: dashboardItem.title,
@@ -29,7 +29,7 @@ const DashboardMenu = React.createClass({
       })
       .value()
 
-    dataMenuList = dataMenuList.concat([
+    menuList = menuList.concat([
       null,
       {
         label: 'Data Browser',
@@ -53,17 +53,52 @@ const DashboardMenu = React.createClass({
             <FaIcon type='bar-chart' size='lg'/> Explore Data
           </span>
           }
-        menuList={dataMenuList}
+        menuList={menuList}
         />
     )
   },
 
-  render() {
+  renderEnterDataMenu(){
 
+    let menuList = [
+      {
+        label: 'Enter Data via Form',
+        href: '/datapoints/entry'
+      },
+      {
+        label: 'Upload Data via CSV File',
+        href: '/source_data/file_upload'
+      }
+    ]
 
+    return (
+      <DropdownMenu
+        label={
+          <span>
+            <FaIcon type='table' size='lg'/> Enter Data
+          </span>
+          }
+        menuList={menuList}
+        />
+    )
+  },
+
+  renderManageSystemMenu(){
+    return (
+      <li>
+        <a href='/ufadmin/regions'>
+          <FaIcon type='cogs' size='lg'/> Manage System
+        </a>
+      </li>
+    )
+  },
+
+  render(){
     return (
       <ul>
         { this.renderExploreDataMenu() }
+        { this.renderEnterDataMenu() }
+        { this.renderManageSystemMenu() }
       </ul>
     )
   }

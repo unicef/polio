@@ -5,16 +5,24 @@ import UserActions from '../actions/UserActions'
 
 export default createStore({
 
-  init(){
+  init() {
     this.user = {}
     this.listenTo(UserActions.getUserPermissions.completed, '_onGetUserPermissionsCompleted')
   },
 
-  _onGetUserPermissionsCompleted(result){
+  _onGetUserPermissionsCompleted(result) {
     if (!_.isEmpty(result.objects)) {
       this.user = _.find(result.objects)
       this.trigger()
     }
+  },
+
+  setPermissions(){
+    this.permissions = [];
+  },
+
+  hasPermission(permissionKey) {
+    return _.indexOf(this.permissions || [], permissionKey) > -1
   }
 
 })
