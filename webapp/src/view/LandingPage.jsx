@@ -105,7 +105,7 @@ module.exports = React.createClass({
     };
   },
 
-    showAllCampaigns: function(e) {
+  showAllCampaigns: function(e) {
     this.setState({ visibleCampaigns: Infinity });
     e.preventDefault();
   },
@@ -113,12 +113,12 @@ module.exports = React.createClass({
   render : function () {
     var campaigns;
     if (_.isFinite(this.state.visibleCampaigns)) {
-       campaigns = _(this.state.campaigns)
-                      .take(this.state.visibleCampaigns)
-                      .map(_campaignRow)
-                      .value();
+      campaigns = _(this.state.campaigns)
+        .take(this.state.visibleCampaigns)
+        .map(_campaignRow)
+        .value();
     } else {
-       campaigns = _(this.state.campaigns).map(_campaignRow).value();
+      campaigns = _(this.state.campaigns).map(_campaignRow).value();
     }
 
     // data entry section, according to permissions
@@ -127,52 +127,52 @@ module.exports = React.createClass({
       var csv_upload_button = '';
       if (NavigationStore.userHasPermission('upload_csv')) {
         csv_upload_button = (
-                <a className="small button" href="/source_data/file_upload">
-                  <i className="fa fa-upload"></i>&emsp;Upload data
-                </a>
-              );
+          <a className="small button" href="/source_data/file_upload">
+            <i className="fa fa-upload"></i>&emsp;Upload data
+          </a>
+        );
       }
 
       var data_entry_button = '';
       if (NavigationStore.userHasPermission('data_entry_form')) {
         data_entry_button = (
-                <a className="small button" href="/datapoints/entry">
-                  <i className="fa fa-table"></i>&emsp;Data Entry Form
-                </a>
-              );
+          <a className="small button" href="/datapoints/entry">
+            <i className="fa fa-table"></i>&emsp;Data Entry Form
+          </a>
+        );
       }
 
       var uploads = <tr><td>No uploads yet.</td></tr>;
       if (this.state.documents && this.state.documents.length > 0) {
         documents = _(this.state.documents)
-                      .take(this.state.visibleUploads)
-                      .map(_uploadRow)
-                      .value();
+          .take(this.state.visibleUploads)
+          .map(_uploadRow)
+          .value();
       }
 
       var dataEntry = (
-          <div className="row">
-            <div className="medium-4 columns">
-              <h2>Enter Data</h2>
-              {data_entry_button}
-              &emsp;
-              {csv_upload_button}
-            </div>
-            <div className="medium-8 columns">
-              <h2>Your Recent CSV Uploads</h2>
-              <table>
-                <tbody>{uploads}</tbody>
-                <tfoot>
-                  <tr>
-                    <td className="more" colSpan="3">
-                      <a href="/source_data/document_index/">see all uploads</a>
-                    </td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
+        <div className="row">
+          <div className="medium-4 columns">
+            <h2>Enter Data</h2>
+            {data_entry_button}
+            &emsp;
+            {csv_upload_button}
           </div>
-        );
+          <div className="medium-8 columns">
+            <h2>Your Recent CSV Uploads</h2>
+            <table>
+              <tbody>{uploads}</tbody>
+              <tfoot>
+              <tr>
+                <td className="more" colSpan="3">
+                  <a href="/source_data/document_index/">see all uploads</a>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      );
 
     }
 
@@ -191,11 +191,11 @@ module.exports = React.createClass({
               <table>
                 <tbody>{campaigns}</tbody>
                 <tfoot>
-                  <tr>
-                    <td className="more" colSpan="6">
-                      <a href="#" onClick={this.showAllCampaigns}>see all campaigns</a>
-                    </td>
-                  </tr>
+                <tr>
+                  <td className="more" colSpan="6">
+                    <a href="#" onClick={this.showAllCampaigns}>see all campaigns</a>
+                  </td>
+                </tr>
                 </tfoot>
               </table>
             </div>

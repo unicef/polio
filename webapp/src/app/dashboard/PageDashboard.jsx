@@ -3,15 +3,27 @@ import Router, {RouteHandler, Route, DefaultRoute} from 'react-router';
 
 import TopBar from './TopBar'
 
-const PropTypes = React.PropTypes
+import PageLanding from './PageLanding';
 
-export default class PageDashboard extends React.Component {
+class PageDashboard extends React.Component {
+
   render() {
     return (
       <div className='page-dashboard'>
         <TopBar />
-        I am Dashboard
+
+        <div>
+          <RouteHandler/>
+        </div>
       </div>
     )
   }
 }
+
+PageDashboard.Route = (
+  <Route name='dashboard' path='/' handler={ PageDashboard }>
+    <DefaultRoute handler={ PageLanding }/>
+  </Route>
+)
+
+export default PageDashboard

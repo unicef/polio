@@ -11,7 +11,7 @@ export default createStore({
 
   init(){
     this.updateDashboardMap(builtinDashboardList)
-    this.listenTo(DashboardActions.fetchDashboardList.completed, '_onFetchDashboardListCompleted')
+    this.listenTo(DashboardActions.fetchDashboardList.completed, this._onFetchDashboardListCompleted)
   },
 
   _onFetchDashboardListCompleted(result){
