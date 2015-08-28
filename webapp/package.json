@@ -67,6 +67,7 @@
     "merge-stream": "^1.0.0",
     "node-sass": "3.2.0",
     "proxy-middleware": "^0.13.1",
+    "regenerator": "^0.8.36",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.2",
     "sinon": "^1.16.1",
