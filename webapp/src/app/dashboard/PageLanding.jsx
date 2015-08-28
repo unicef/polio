@@ -5,7 +5,7 @@ import Row from '../components/Row'
 import RecentCampaignList from '../campaign/RecentCampaignList'
 import AboutRhizome from './components/AboutRhizome';
 
-export default class PageLanding extends React.Component {
+class PageLanding extends React.Component {
 
   render() {
     return (
@@ -25,3 +25,9 @@ export default class PageLanding extends React.Component {
     )
   }
 }
+
+PageLanding.Route = (
+  <Route name='landing' handler={ PageLanding }/>
+)
+
+export default PageLanding

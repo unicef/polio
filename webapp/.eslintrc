@@ -19,7 +19,6 @@
     "jsx": true
   },
   "rules": {
-    "camelcase": 0,
     "curly": 0,
     "comma-dangle": [
       2,

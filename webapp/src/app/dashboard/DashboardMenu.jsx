@@ -31,6 +31,15 @@ const DashboardMenu = React.createClass({
     })
   },
 
+  menuItemRenderer(menuItem) {
+    if (menuItem.to) {
+      return <Link to={menuItem.to} params={menuItem.params}> { menuItem.label } </Link>
+    }
+    return (
+      <a href={menuItem.href}> { menuItem.label } </a>
+    )
+  },
+
   renderExploreDataMenu(){
 
     const state = this.state
@@ -39,7 +48,10 @@ const DashboardMenu = React.createClass({
       .map((dashboardItem)=> {
         return {
           label: dashboardItem.title,
-          href: '#/' + _.kebabCase(dashboardItem.title)
+          to: 'dashboard-detail-latest',
+          params: {
+            dashboardType: _.kebabCase(dashboardItem.title)
+          }
         }
       })
       .value()
@@ -48,16 +60,16 @@ const DashboardMenu = React.createClass({
       null,
       {
         label: 'Data Browser',
-        href: '#/datapoints/table'
+        to: 'data-view'
       },
       null,
       {
         label: 'See all custom dashboards',
-        href: '#/datapoints/dashboards'
+        to: 'dashboard-custom'
       },
       {
         label: 'Create New dashboard',
-        href: '#/datapoints/dashboards/edit'
+        to: 'dashboard-custom-create'
       }
     ])
 
@@ -69,6 +81,7 @@ const DashboardMenu = React.createClass({
           </span>
           }
         menuList={menuList}
+        menuItemRenderer={this.menuItemRenderer}
         />
     )
   },

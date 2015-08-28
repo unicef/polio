@@ -1,2 +1,2 @@
-import './polyfill/polyfill'
+import './helpers/polyfill'
 import './app/App'

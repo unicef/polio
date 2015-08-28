@@ -20,8 +20,8 @@ class App extends React.Component {
 }
 
 const routes = (
-  <Route handler={App}>
-    <DefaultRoute handler={PageDashboard}/>
+  <Route handler={ App }>
+    <DefaultRoute handler={ PageDashboard }/>
     { PageDashboard.Route }
   </Route>
 );
