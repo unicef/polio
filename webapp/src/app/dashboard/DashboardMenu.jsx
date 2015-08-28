@@ -6,14 +6,29 @@ import { Link } from 'react-router'
 import FaIcon from '../components/FaIcon'
 import DropdownMenu from '../components/DropdownMenu'
 
+import DashboardActions from './actions/DashboardActions'
 import DashboardStore from './stores/DashboardStore'
 
 const DashboardMenu = React.createClass({
+
+  mixins: [
+    Reflux.listenTo(DashboardStore, '_onDashboardStoreUpdate')
+  ],
 
   getInitialState(){
     return {
       dashboardList: DashboardStore.getDashboardList()
     }
+  },
+
+  componentWillMount(){
+    DashboardActions.fetchDashboardList()
+  },
+
+  _onDashboardStoreUpdate(){
+    this.setState({
+      dashboardList: DashboardStore.getDashboardList()
+    })
   },
 
   renderExploreDataMenu(){
