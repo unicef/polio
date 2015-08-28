@@ -11,10 +11,10 @@ describe(__filename, ()=> {
     it('should have className with "fa fa-<type>"', ()=> {
       const type = 'some-icon-name';
       const instance = TestUtils.renderIntoDocument(<FaIcon type={type}/>)
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('fa');
-      expect(instanceDomClassName).to.contains(`fa-${type}`);
+      expect(instanceNodeClassName).to.contains('fa');
+      expect(instanceNodeClassName).to.contains(`fa-${type}`);
     })
   })
 
@@ -25,11 +25,11 @@ describe(__filename, ()=> {
       const instance = TestUtils.renderIntoDocument(
         <FaIcon type={type} size={size}/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('fa');
-      expect(instanceDomClassName).to.contains(`fa-${type}`);
-      expect(instanceDomClassName).to.contains(`fa-${size}`);
+      expect(instanceNodeClassName).to.contains('fa');
+      expect(instanceNodeClassName).to.contains(`fa-${type}`);
+      expect(instanceNodeClassName).to.contains(`fa-${size}`);
     })
   })
 
@@ -40,11 +40,11 @@ describe(__filename, ()=> {
       const instance = TestUtils.renderIntoDocument(
         <FaIcon type={type} animate={animate}/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('fa');
-      expect(instanceDomClassName).to.contains(`fa-${type}`);
-      expect(instanceDomClassName).to.contains(`fa-${animate}`);
+      expect(instanceNodeClassName).to.contains('fa');
+      expect(instanceNodeClassName).to.contains(`fa-${type}`);
+      expect(instanceNodeClassName).to.contains(`fa-${animate}`);
     })
   })
 

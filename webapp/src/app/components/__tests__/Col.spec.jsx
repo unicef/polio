@@ -11,9 +11,9 @@ describe(__filename, ()=> {
 
     it('should have className with "columns"', ()=> {
       const instance = TestUtils.renderIntoDocument(<Col/>)
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.eql('columns');
+      expect(instanceNodeClassName).to.eql('columns');
     })
 
   })
@@ -24,10 +24,10 @@ describe(__filename, ()=> {
       const instance = TestUtils.renderIntoDocument(
         <Col sm={12}/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('columns');
-      expect(instanceDomClassName).to.contains('small-12');
+      expect(instanceNodeClassName).to.contains('columns');
+      expect(instanceNodeClassName).to.contains('small-12');
     })
 
   })
@@ -38,11 +38,11 @@ describe(__filename, ()=> {
       const instance = TestUtils.renderIntoDocument(
         <Col lg={4} lgOffset={1}/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('columns');
-      expect(instanceDomClassName).to.contains('large-4');
-      expect(instanceDomClassName).to.contains('large-offset-1');
+      expect(instanceNodeClassName).to.contains('columns');
+      expect(instanceNodeClassName).to.contains('large-4');
+      expect(instanceNodeClassName).to.contains('large-offset-1');
     })
 
   })
@@ -53,11 +53,11 @@ describe(__filename, ()=> {
       const instance = TestUtils.renderIntoDocument(
         <Col lg={4} lgPull={1}/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('columns');
-      expect(instanceDomClassName).to.contains('large-4');
-      expect(instanceDomClassName).to.contains('large-pull-1');
+      expect(instanceNodeClassName).to.contains('columns');
+      expect(instanceNodeClassName).to.contains('large-4');
+      expect(instanceNodeClassName).to.contains('large-pull-1');
     })
 
   })
@@ -68,11 +68,11 @@ describe(__filename, ()=> {
       const instance = TestUtils.renderIntoDocument(
         <Col lg={4} lgPush={1}/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('columns');
-      expect(instanceDomClassName).to.contains('large-4');
-      expect(instanceDomClassName).to.contains('large-push-1');
+      expect(instanceNodeClassName).to.contains('columns');
+      expect(instanceNodeClassName).to.contains('large-4');
+      expect(instanceNodeClassName).to.contains('large-push-1');
     })
 
   })
@@ -83,11 +83,11 @@ describe(__filename, ()=> {
       const instance = TestUtils.renderIntoDocument(
         <Col sm={4} smCentered={true} lgCentered={false}/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('columns');
-      expect(instanceDomClassName).to.contains('small-centered');
-      expect(instanceDomClassName).to.contains('large-uncentered');
+      expect(instanceNodeClassName).to.contains('columns');
+      expect(instanceNodeClassName).to.contains('small-centered');
+      expect(instanceNodeClassName).to.contains('large-uncentered');
     })
 
   })
@@ -98,11 +98,11 @@ describe(__filename, ()=> {
       const instance = TestUtils.renderIntoDocument(
         <Col sm={4} end/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('small-4');
-      expect(instanceDomClassName).to.contains('columns');
-      expect(instanceDomClassName).to.contains('end');
+      expect(instanceNodeClassName).to.contains('small-4');
+      expect(instanceNodeClassName).to.contains('columns');
+      expect(instanceNodeClassName).to.contains('end');
     })
 
   })

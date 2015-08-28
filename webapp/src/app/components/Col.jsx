@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import sizeClassMap from './constants/sizeClassMap';
+import fdGridSizeClasses from './constants/fdGridSizeClasses';
 
 const PropTypes = React.PropTypes;
 
@@ -36,8 +36,8 @@ class Col extends React.Component {
     const props = this.props;
     let classes = {};
 
-    Object.keys(sizeClassMap).forEach((key)=> {
-      let size = sizeClassMap[key];
+    Object.keys(fdGridSizeClasses).forEach((key)=> {
+      let size = fdGridSizeClasses[key];
 
       let prop = key;
       let classPart = size + '-';

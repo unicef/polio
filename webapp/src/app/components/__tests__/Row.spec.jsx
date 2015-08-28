@@ -11,9 +11,9 @@ describe(__filename, ()=> {
 
     it('should have className with "row"', ()=> {
       const instance = TestUtils.renderIntoDocument(<Row/>)
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.eql('row');
+      expect(instanceNodeClassName).to.eql('row');
     })
 
   })
@@ -24,32 +24,32 @@ describe(__filename, ()=> {
       const instance = TestUtils.renderIntoDocument(
         <Row smCollapse/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('row');
-      expect(instanceDomClassName).to.contains('small-collapse');
+      expect(instanceNodeClassName).to.contains('row');
+      expect(instanceNodeClassName).to.contains('small-collapse');
     })
 
     it('should have className with "row small-uncollapse", if prop smCollapse be set false', ()=> {
       const instance = TestUtils.renderIntoDocument(
         <Row smCollapse={false}/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('row');
-      expect(instanceDomClassName).to.not.contains('small-collapse');
-      expect(instanceDomClassName).to.contains('small-uncollapse');
+      expect(instanceNodeClassName).to.contains('row');
+      expect(instanceNodeClassName).to.not.contains('small-collapse');
+      expect(instanceNodeClassName).to.contains('small-uncollapse');
     })
 
     it('should have mixin classNames', ()=> {
       const instance = TestUtils.renderIntoDocument(
         <Row mdCollapse={false} lgCollapse={true}/>
       )
-      const instanceDomClassName = React.findDOMNode(instance).className;
+      const instanceNodeClassName = React.findDOMNode(instance).className;
 
-      expect(instanceDomClassName).to.contains('row');
-      expect(instanceDomClassName).to.contains('medium-uncollapse');
-      expect(instanceDomClassName).to.contains('large-collapse');
+      expect(instanceNodeClassName).to.contains('row');
+      expect(instanceNodeClassName).to.contains('medium-uncollapse');
+      expect(instanceNodeClassName).to.contains('large-collapse');
     })
 
   })

@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import sizeClassMap from './constants/sizeClassMap';
+import fdGridSizeClasses from './constants/fdGridSizeClasses';
 
 import Col from './Col'
 
@@ -19,12 +19,12 @@ class Row extends React.Component {
     const props = this.props;
     let classes = {}
 
-    Object.keys(sizeClassMap).forEach((key)=> {
+    Object.keys(fdGridSizeClasses).forEach((key)=> {
       let size = key;
       let prop = size + 'Collapse';
 
       if (props[prop] !== undefined) {
-        classes[sizeClassMap[size] + (!!props[prop] ? '-collapse' : '-uncollapse')] = true;
+        classes[fdGridSizeClasses[size] + (!!props[prop] ? '-collapse' : '-uncollapse')] = true;
       }
     });
 
