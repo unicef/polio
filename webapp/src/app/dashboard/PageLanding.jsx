@@ -1,9 +1,9 @@
 import React from 'react'
 import Router, {RouteHandler, Route, DefaultRoute} from 'react-router';
 
-import AboutRhizome from './components/AboutRhizome';
-
 import Row from '../components/Row'
+import RecentCampaignList from '../campaign/RecentCampaignList'
+import AboutRhizome from './components/AboutRhizome';
 
 export default class PageLanding extends React.Component {
 
@@ -12,7 +12,10 @@ export default class PageLanding extends React.Component {
       <div className='PageLanding'>
         <Row>
           <Row.Col md={9}>
-            heh
+            <span className="pageWelcome">
+              Welcome to UNICEF’s Polio Eradication data portal.
+            </span>
+            <RecentCampaignList />
           </Row.Col>
           <Row.Col md={3}>
             <AboutRhizome/>

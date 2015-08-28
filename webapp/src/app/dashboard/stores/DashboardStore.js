@@ -21,17 +21,9 @@ export default createStore({
     }
   },
 
-  getDashBoardList(){
+  getDashboardList(){
     return _(this.dashboardMap)
       .values()
-      .sortBy('id')
-      .value()
-  },
-
-  getBuiltinDashBoardList(){
-    return _(this.dashboardMap)
-      .values()
-      .filter(d => d.builtin || d.owned_by_current_user)
       .sortBy('id')
       .value()
   },

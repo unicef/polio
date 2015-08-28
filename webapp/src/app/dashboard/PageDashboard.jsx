@@ -12,7 +12,7 @@ class PageDashboard extends React.Component {
       <div className='page-dashboard'>
         <TopBar />
 
-        <div>
+        <div style={{paddingTop:'20px'}}>
           <RouteHandler/>
         </div>
       </div>

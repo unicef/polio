@@ -12,7 +12,7 @@ const DashboardMenu = React.createClass({
 
   getInitialState(){
     return {
-      dashboardList: DashboardStore.getBuiltinDashBoardList()
+      dashboardList: DashboardStore.getDashboardList()
     }
   },
 
